@@ -11,4 +11,8 @@ export class BenefitsService {
     createBenefit(benefit: any) {
         return of(true);
     }
+
+    getBenefits() {
+        return of([]);
+    }
 }
