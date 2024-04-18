@@ -1,18 +1,28 @@
+import { Observable, catchError, from, map, of } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Firestore } from '@angular/fire/firestore';
-import { of } from 'rxjs';
+import {
+  Firestore,
+  addDoc,
+  collection,
+  collectionData,
+} from '@angular/fire/firestore';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class BenefitsService {
-    constructor(private firestore: Firestore) { }
+  benefitsCollection = collection(this.firestore, 'benefits');
 
-    createBenefit(benefit: any) {
-        return of(true);
-    }
+  constructor(private firestore: Firestore) {}
 
-    getBenefits() {
-        return of([]);
-    }
+  createBenefit(benefit: any) {
+    return from(addDoc(this.benefitsCollection, benefit)).pipe(
+      map(() => true),
+      catchError(() => of(false))
+    );
+  }
+
+  getBenefits() {
+    return collectionData(this.benefitsCollection) as Observable<any[]>;
+  }
 }
