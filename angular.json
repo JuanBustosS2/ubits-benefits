@@ -90,6 +90,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ubits-benefits:build:production",
+              "serveTarget": "ubits-benefits:serve:production"
+            },
+            "development": {
+              "buildTarget": "ubits-benefits:build:development",
+              "serveTarget": "ubits-benefits:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
