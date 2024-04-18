@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import {BrowserModule} from "@angular/platform-browser";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
@@ -20,6 +18,7 @@ import {CommonModule} from "@angular/common";
     MatFormFieldModule,
   ]
 })
+
 export class CreateBenefitComponent {
   form: FormGroup;
 

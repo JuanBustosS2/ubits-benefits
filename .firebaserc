@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ubits-benefits": {
+      "hosting": {
+        "ubits-benefits": [
+          "ubits-benefits"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ubits-benefits"
+  }
+}
